@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- This file contains the definition of the "Gear" tab panel. This tab is where
-      the user selects general gear (non-weapons) for the character.
+<!-- This file contains the definition of the "Spaceship" tab panel. This tab is where
+      the user selects Spaceship(s) for the character.
 
       All public visual elements used with this tab panel start with the prefix "gr"
       to associate them with the tab.
