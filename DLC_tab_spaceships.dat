@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the definition of the "Gear" tab panel. This tab is where
+      the user selects general gear (non-weapons) for the character.
+
+      All public visual elements used with this tab panel start with the prefix "gr"
+      to associate them with the tab.
+-->
+
+<document signature="Hero Lab Data">
+
+
+  <portal
+    id="grSpaceship"
+    style="tblNormal">
+    <table_dynamic
+      component="Gear"
+      showtemplate="sfSSPick"
+      choosetemplate="sfHGThing"
+      choosesortset="SFVehicle"
+      buytemplate="BuyCash"
+      selltemplate="SellCash"
+      descwidth="350">
+      <list>component.Starship</list>
+      <titlebar><![CDATA[
+        @text = "Select Spaceships to Purchase from the List Below"
+        ]]></titlebar>
+      <headertitle><![CDATA[
+        @text = "Spaceships"
+        ]]></headertitle>
+      <additem><![CDATA[
+        @text = "Add New Spaceship"
+        ]]></additem>
+      </table_dynamic>
+    </portal>
+	
+  <!-- gear layout
+        This layout orchestrates the display of the visual elements that comprise
+        the Gear tab. This amounts to a title and a table that allow the user to
+        add gear to the character.
+
+        The logic for this layout is similar to preceeding tabs, so please refer
+        to those tabs for more details.
+  -->
+  <layout
+    id="spaceships">
+    <portalref portal="grSpaceship" taborder="10"/>
+
+    <!-- This script sizes and positions the layout and its child visual elements. -->
+    <position><![CDATA[
+      autogap = 10
+
+      ~set all tables to span the full width of the layout
+      portal[grSpaceship].width = width
+
+      perform portal[grSpaceship].batchadd
+
+      perform this.batchplace
+
+      ]]></position>
+
+    </layout>
+
+
+  <!-- gear panel
+        This is the "Gear" panel shown within Hero Lab. Since we want this panel to
+        appear second within the second grouping (equipment), we assign it an
+        "order" of 220.
+
+        The logic for this panel is similar to the logic for the preceeding panels,
+        so please refer to those panels for more details.
+  -->
+  <panel
+    id="spaceships"
+    name="Spaceships"
+    marginhorz="5"
+    marginvert="5"
+    order="220">
+    <live>source.DLC_Core &amp; !Creature.creSFR?</live>
+    <layoutref layout="spaceships"/>
+    <position><![CDATA[
+      ]]></position>
+    </panel>
+
+
+  </document>
