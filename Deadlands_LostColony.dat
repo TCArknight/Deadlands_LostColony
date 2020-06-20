@@ -1787,6 +1787,7 @@ perform hero.assign[Hero.UseMods]</eval>
     <fieldval field="wpAmmo" value="20mm"/>
     <fieldval field="grCost" value="2000"/>
     <fieldval field="gearWeight" value="75"/>
+    <usesource source="DLC_Core"/>
     <tag group="Weapon" tag="HvyWeapon"/>
     <tag group="Weapon" tag="SnapFire"/>
     <tag group="Weapon" tag="NoHarness4" name="-4 Shooting without Harness"/>
@@ -1806,6 +1807,7 @@ perform hero.assign[Hero.UseMods]</eval>
     <fieldval field="wpAmmo" value="5.56mm"/>
     <fieldval field="grCost" value="750"/>
     <fieldval field="gearWeight" value="29"/>
+    <usesource source="DLC_Core"/>
     <tag group="Weapon" tag="SnapFire"/>
     <tag group="WeaponType" tag="SpecHeavy"/>
     <tag group="StrReqDie" tag="3"/>
